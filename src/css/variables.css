@@ -1,0 +1,9 @@
+:root {
+  /*
+   * Card rarity colors
+   */
+  --common: #F5F0E5;
+  --rare: #309874;
+  --epic: #FFC53A;
+  --color: #E53F4E;
+}

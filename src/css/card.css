@@ -1,0 +1,67 @@
+@import './css/variables';
+
+.card {
+  width: 300px;
+
+  display: flex;
+  flex-direction: column;
+
+  position: relative;
+}
+  /*
+   * card type colors
+   */
+  .card--common {
+    background-color: var(--common);
+  }
+  .card--rare {
+    background-color: var(--rare);
+  }
+  .card--epic {
+    background-color: var(--epic);
+  }
+  .card--legendary {
+    background-color: var(--legendary);
+  }
+
+  .card__name {
+    text-align: center;
+  }
+
+  .card__image {
+    width: 250px;
+    height: 250px;
+
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    margin-block-end: 15px;
+
+    border-radius: 50%;
+    overflow: hidden;
+  }
+    .card__image img {
+      height: 100%;
+      object-fit: contain;
+    }
+
+  .card__type {
+    text-align: center;
+  }
+
+  .card__desctiption {
+    margin-top: auto;
+    text-align: center;
+  }
+
+  .card__defence,
+  .card__attack {
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+  }
+  .card__defence {
+    left: 0;
+  }
+  .card__attack {
+    right: 0;
+  }
