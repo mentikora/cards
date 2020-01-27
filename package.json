@@ -2,7 +2,7 @@
   "name": "cards",
   "version": "1.0.0",
   "description": "study project",
-  "main": "index.js",
+  "main": "public/bundle",
   "scripts": {
     "test": "mocha",
     "build": "rollup -c",
