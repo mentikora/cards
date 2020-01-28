@@ -1,16 +1,16 @@
-import { Card } from './Card';
-import { ICard, IUnit } from '../models';
+import { IUnit } from '../models';
 
-class Unit extends Card {
-  readonly model:string;
+class Unit implements IUnit {
+  readonly model: string;
 
   constructor(
-    baseSettings: ICard,
-    unitSettings: IUnit,
-    ) {
-      const { name, description, rarity, image } = baseSettings;
-      super(name, description, rarity, image);
-      const { stats, type } = unitSettings;
+    public name: string,
+    public description: string,
+    public rarity: 'common' | 'rare' | 'epic' | 'legendary',
+    public image: string,
+    public stats: number[],
+    public type: string,
+  ) {
       this.model = 'UNIT';
   }
 }

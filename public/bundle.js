@@ -62,29 +62,17 @@ var Card = function Card(name, description, rarity, image) {
   this.image = image;
 };
 
-var Unit =
-/*#__PURE__*/
-function (_Card) {
-  _inherits(Unit, _Card);
+var Unit = function Unit(name, description, rarity, image, stats, type) {
+  _classCallCheck(this, Unit);
 
-  function Unit(baseSettings, unitSettings) {
-    var _this;
-
-    _classCallCheck(this, Unit);
-
-    var name = baseSettings.name,
-        description = baseSettings.description,
-        rarity = baseSettings.rarity,
-        image = baseSettings.image;
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(Unit).call(this, name, description, rarity, image));
-    var stats = unitSettings.stats,
-        type = unitSettings.type;
-    _this.model = 'UNIT';
-    return _this;
-  }
-
-  return Unit;
-}(Card);
+  this.name = name;
+  this.description = description;
+  this.rarity = rarity;
+  this.image = image;
+  this.stats = stats;
+  this.type = type;
+  this.model = 'UNIT';
+};
 
 var Spell =
 /*#__PURE__*/
@@ -109,15 +97,8 @@ function (_Card) {
   return Spell;
 }(Card);
 
-var _TimberWolf = new Unit({
-  name: 'Timber Wolf',
-  description: 'Your other beasts have +1 attack',
-  rarity: 'common',
-  image: 'https://i.pinimg.com/originals/48/8d/2a/488d2ab1fa7a8177c35fa04b73c0337e.jpg'
-}, {
-  stats: [1, 1],
-  type: 'rare'
-});
+var _TimberWolf = new Unit('Timber Wolf', 'Your other beasts have +1 attack', 'common', 'https://i.pinimg.com/originals/48/8d/2a/488d2ab1fa7a8177c35fa04b73c0337e.jpg', [2, 2], 'rare'); // type #2
+
 
 var _Fireball = new Spell({
   name: 'Fireball',
@@ -132,11 +113,12 @@ var _Fireball = new Spell({
 });
 
 var displayCard = function displayCard(o) {
-  // console.log(o);
+  //Unit
   var content = document.getElementById('display-card');
-  return content.innerHTML = "\n    <div class=\"card card--".concat(o.rarity, "\">\n    <div class=\"card__image\">\n      <img src=\"").concat(o.image, "\" alt=\"").concat(o.name, "\">\n    </div>\n    <div class=\"card__name\">").concat(o.name, "</div>\n    <div class=\"card__desctiption\">").concat(o.description, "</div>\n    <div class=\"card__attack\">atk: </div>\n    <div class=\"card__defence\">def: </div>\n    </div>\n  ");
+  return content.innerHTML = "\n    <div class=\"card card--".concat(o.rarity, "\">\n    <div class=\"card__image\">\n      <img src=\"").concat(o.image, "\" alt=\"").concat(o.name, "\">\n    </div>\n    <div class=\"card__name\">").concat(o.name, "</div>\n    <div class=\"card__desctiption\">").concat(o.description, "</div>\n    <div class=\"card__attack\">atk:  </div>\n    <div class=\"card__defence\">def: </div>\n    </div>\n  ");
 }; // displayCard(_TimberWolf);
+// console.log(_TimberWolf);
 
 
-displayCard(_Fireball); // console.log(_TimberWolf);
+displayCard(_Fireball);
 //# sourceMappingURL=bundle.js.map
